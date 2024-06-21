@@ -39,7 +39,9 @@ const config = {
       },
       backgroundImage: {
         "banner-header": "url('/assets/image-bg.svg')",
-        "call-to-action": "url('/assets/background-imagebottom.svg)",
+        "call-to-action": "url('/assets/background-imagebottom.svg')",
+        "our-value": "url('/assets/bg our value lg.svg')",
+        "our-value-mobile": "url('/assets/ourvalue-bg mobile.svg')",
       },
     },
   },
