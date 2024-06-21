@@ -8,7 +8,7 @@ import Logo from "@/assets/logo.svg";
 function Header() {
   // const pathname = usePathname()
   return (
-    <div className="lg:px-[161px] lg:py-6 px-4 py-3 bg-banner-header flex justify-between items-center">
+    <div className="lg:px-[164px] lg:py-6 px-4 py-3 bg-banner-header flex justify-between items-center">
       <Link href="/">
         <Image src={Logo} alt="logo" />
       </Link>

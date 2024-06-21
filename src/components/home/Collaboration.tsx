@@ -14,7 +14,7 @@ import SkkMigas from "@/assets/skkmigas.svg";
 function Collaboration() {
   return (
     <div className="py-10">
-      <div className="text-center text-[22px] font-normal leading-[140%] tracking-[0.44px] text-[#121926] mb-6 lg:mb-10">
+      <div className="px-4 text-center text-[22px] font-normal leading-[140%] tracking-[0.44px] text-[#121926] mb-6 lg:mb-10">
         How our collaboration drives growth for their business
       </div>
 

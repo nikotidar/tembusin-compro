@@ -6,7 +6,7 @@ import IllustrationBanner from "@/assets/Illustrationbanner.svg";
 function Banner() {
   return (
     <div className="bg-banner-header h-[855px] bg-cover bg-no-repeat relative">
-      <div className="lg:px-[161px] lg:py-[120px] px-4 py-6 flex flex-col items-center lg:items-start">
+      <div className="lg:px-[164px] lg:py-[120px] px-4 py-6 flex flex-col items-center lg:items-start">
         <div className="text-[36px] lg:text-[80px] text-white font-extrabold tracking-[1.6px] leading-[130%] lg:text-left text-center lg:max-w-[920px] mb-10">
           Empowering Security, Ensuring Trust.
         </div>

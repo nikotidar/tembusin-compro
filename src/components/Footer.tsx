@@ -58,9 +58,6 @@ function Footer() {
           <Link href="#">
             <div className={LABEL_VALUE}>Penetration Testing</div>
           </Link>
-          <div className={LABEL_VALUE}>
-            <Link href="#">Penetration Testing</Link>
-          </div>
           <Link href="#">
             <div className={LABEL_VALUE}>Security Solution Integration</div>
           </Link>

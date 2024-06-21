@@ -5,7 +5,7 @@ import Illustration from "@/assets/illustration whoweare.svg";
 
 function WhoWeAre() {
   return (
-    <div className="lg:px-[161px] lg:py-[140px] py-[80px] px-4 bg-[#F7FAFC] flex flex-col-reverse lg:flex-row items-center">
+    <div className="lg:px-[164px] lg:py-[140px] py-[80px] px-4 bg-[#F7FAFC] flex flex-col-reverse lg:flex-row items-center">
       <div>
         <div className="px-3 py-1 uppercase text-base font-bold leading-[130%] tracking-[0.64px] text-[#46A7DE] mb-5">
           who we are
