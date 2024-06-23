@@ -28,7 +28,7 @@ function BannerBottom() {
       <div
         className="md:hidden flex flex-col items-center px-4 py-[48px]"
         style={{
-          background: "linear-gradient(313deg, #46A7DE 8.7%, #2E449C 116.88%)",
+          background: "linear-gradient(313deg, #46A7DE 8.7%, #2E449C 116.88%);",
         }}
       >
         <div className="md:text-[50px] text-[24px] font-bold leading-[140%] tracking-[0.48px] md:tracking-[1px] md:mb-6 mb-4 text-white text-center">
