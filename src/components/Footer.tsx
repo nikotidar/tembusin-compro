@@ -68,7 +68,7 @@ function Footer() {
 
         <div className="flex flex-col gap-3">
           <div className={HEADING}>Social Media</div>
-          <Link href="#">
+          <Link href="https://instagram.com/tembusin.id">
             <div className={`${LABEL_VALUE} flex gap-2 items-center`}>
               <Image src={InstagramIcon} alt="Instagram icon" />{" "}
               <span>Instagram</span>
