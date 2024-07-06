@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 function BannerBottom() {
   return (
@@ -20,9 +21,11 @@ function BannerBottom() {
           Rasakan perbedaan antara rasa aman dan keamanan yang sebenarnya
         </div>
 
-        <Button className="uppercase px-4 py-3 rounded-[2px] bg-[#2E449C] text-white font-bold leading-[130%] tracking-[0.64px]">
-          CONTACT US NOW
-        </Button>
+        <Link href="/contact">
+          <Button className="uppercase px-4 py-3 rounded-[2px] bg-[#2E449C] text-white font-bold leading-[130%] tracking-[0.64px]">
+            CONTACT US NOW
+          </Button>
+        </Link>
       </div>
 
       <div
@@ -41,9 +44,11 @@ function BannerBottom() {
           Rasakan perbedaan antara rasa aman dan keamanan yang sebenarnya
         </div>
 
-        <Button className="uppercase px-4 py-3 rounded-[2px] bg-[#2E449C] text-white font-bold leading-[130%] tracking-[0.64px]">
-          CONTACT US NOW
-        </Button>
+        <Link href="/contact">
+          <Button className="uppercase px-4 py-3 rounded-[2px] bg-[#2E449C] text-white font-bold leading-[130%] tracking-[0.64px]">
+            CONTACT US NOW
+          </Button>
+        </Link>
       </div>
     </div>
   );

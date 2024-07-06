@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 import IllustrationBanner from "@/assets/Illustrationbanner.svg";
 
@@ -13,9 +14,11 @@ function Banner() {
         <div className="text-base lg:text-[22px] text-white font-normal leading-[140%] tracking-[0.44px] mb-16 text-center lg:text-left lg:max-w-[536px]">
           Focus on your business and let us protect your company's cyber space.
         </div>
-        <Button className="px-6 py-4 text-white text-base font-bold tracking-[0.8px] leading-[138%] bg-[#46A7DE] rounded-[2px]">
-          Contact Us
-        </Button>
+        <Link href="/contact">
+          <Button className="px-6 py-4 text-white text-base font-bold tracking-[0.8px] leading-[138%] bg-[#46A7DE] rounded-[2px]">
+            Contact Us
+          </Button>
+        </Link>
       </div>
       <Image
         src={IllustrationBanner}

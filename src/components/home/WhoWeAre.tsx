@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 import Illustration from "@/assets/illustration whoweare.svg";
 
@@ -19,9 +20,11 @@ function WhoWeAre() {
           achieve your business goals.
         </div>
 
-        <Button className="border-[#46A7DE] px-4 py-3 rounded-[2px] text-[#46A7DE] uppercase bg-transparent leading-[130%] tracking-[0.64px] font-bold border-[2px]">
-          Contact Us
-        </Button>
+        <Link href="/contact">
+          <Button className="border-[#46A7DE] px-4 py-3 rounded-[2px] text-[#46A7DE] uppercase bg-transparent leading-[130%] tracking-[0.64px] font-bold border-[2px]">
+            Contact Us
+          </Button>
+        </Link>
       </div>
 
       <Image src={Illustration} alt="illustration" />
