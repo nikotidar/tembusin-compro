@@ -4,6 +4,25 @@ import Banner from "@/components/about/Banner";
 import OurValue from "@/components/about/OurValue";
 import SecurityExcellent from "@/components/about/SecurityExcellent";
 import Collaboration from "@/components/home/Collaboration";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About - Tembusin",
+  description: "Meet Tembusin Cyber Security for your business.",
+  openGraph: {
+    title: "About - Tembusin",
+    description: "Meet Tembusin Cyber Security for your business.",
+    url: "https://tembusin.id",
+    siteName: "Tembusin",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
+};
 
 export default function About() {
   return (
