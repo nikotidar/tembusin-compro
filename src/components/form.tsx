@@ -3,18 +3,39 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { SubmitHandler, useForm } from "react-hook-form";
+import * as yup from "yup";
+
+const schema = yup
+  .object({
+    name: yup.string().required(),
+    company: yup.string().required(),
+    email: yup.string().email().required(),
+    body: yup.string(),
+  })
+  .required();
+
+type Inputs = {
+  name: string;
+  company: string;
+  email: string;
+  body?: string | undefined;
+};
 
 function Form() {
-  const [body, setBody] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  // const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
 
-  const handleBody = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setBody(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    console.log(body);
-    const urlEncoded = encodeURI(body);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    const urlEncoded = encodeURI(data.body !== undefined ? data.body : "");
     window.location.href = `mailto:info@tembusin.id?body=${urlEncoded}`;
   };
 
@@ -23,35 +44,38 @@ function Form() {
       // action="mailto:info@tembusin.id"
       encType="text/plain"
       method="POST"
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(onSubmit)}
     >
       <div className="px-5 py-8 lg:px-10 lg:py-[56px] bg-white flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <div className="text-[#121926] text-base font-normal leading-[140%] tracking-[0.32px]">
             Fullname <span className="text-[#D30D0D]">*</span>
           </div>
-          <Input name="name" type="text" />
+          <Input {...register("name")} type="text" />
+          <p>{errors.name?.message}</p>
         </div>
 
         <div className="flex flex-col gap-2">
           <div className="text-[#121926] text-base font-normal leading-[140%] tracking-[0.32px]">
             Company Name <span className="text-[#D30D0D]">*</span>
           </div>
-          <Input name="company" type="text" />
+          <Input {...register("company")} type="text" />
+          <p>{errors.company?.message}</p>
         </div>
 
         <div className="flex flex-col gap-2">
           <div className="text-[#121926] text-base font-normal leading-[140%] tracking-[0.32px]">
             Email Address <span className="text-[#D30D0D]">*</span>
           </div>
-          <Input name="email" type="email" />
+          <Input {...register("email")} type="email" />
+          <p>{errors.email?.message}</p>
         </div>
 
         <div className="flex flex-col gap-2">
           <div className="text-[#121926] text-base font-normal leading-[140%] tracking-[0.32px]">
             Message (Optional)
           </div>
-          <Textarea name="body" onChange={handleBody} />
+          <Textarea {...register("body")} />
         </div>
 
         <Button
