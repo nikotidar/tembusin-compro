@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Tembusin",
     images: [
       {
-        url: "/assets/og-image.png",
+        url: "https://tembusin.id/assets/og-image.png",
         width: 1200,
         height: 630,
       },
