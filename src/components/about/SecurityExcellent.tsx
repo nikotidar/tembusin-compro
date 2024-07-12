@@ -23,7 +23,7 @@ function SecurityExcellent() {
             Empowering Businesses with Enhanced Security
           </div>
           <div className="text-[#4B5565] md:text-base text-sm font-normal leading-[140%] tracking-[0.28px] md:tracking-[0.32px]">
-            QoinSec delivers tailored security assurance solutions for
+            Tembusin delivers tailored security assurance solutions for
             Indonesian businesses, prioritizing cutting-edge technologies. Our
             proactive monitoring ensures defense against evolving threats,
             offering peace of mind in today's digital landscape.
