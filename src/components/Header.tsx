@@ -6,9 +6,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import Logo from "@/assets/logo.svg";
+import { Menu, MenuItem } from "@mui/material";
+import { useState } from "react";
+import { FaAngleDown } from "react-icons/fa";
 
 function Header() {
   const pathname = usePathname();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className="lg:px-[164px] lg:py-6 px-4 py-3 bg-banner-header flex justify-between items-center">
@@ -17,34 +28,49 @@ function Header() {
       </Link>
       <DrawerNav />
 
-      <div className="md:flex hidden gap-2">
+      <div className="md:flex items-center hidden gap-2">
         <Link href="/">
           <div
-            className={`p-[10px] text-base ${
-              pathname === "/" ? "text-[#46A7DE] font-bold" : "text-[#C0C7E1]"
-            }`}
+            className={`p-[10px] text-base ${pathname === "/" ? "text-[#46A7DE] font-bold" : "text-[#C0C7E1]"
+              }`}
           >
             Home
           </div>
         </Link>
-        <Link href="/services">
+        <Button
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
           <div
-            className={`p-[10px] text-base ${
-              pathname === "/services"
-                ? "text-[#46A7DE] font-bold"
-                : "text-[#C0C7E1]"
-            }`}
+            className={`text-base flex items-center gap-2 ${pathname === "/services"
+              ? "text-[#46A7DE] font-bold"
+              : "text-[#C0C7E1]"
+              }`}
           >
             Services
+            <FaAngleDown />
           </div>
-        </Link>
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem onClick={handleClose}>Penetration Testing</MenuItem>
+          <MenuItem onClick={handleClose}>Vulnerability Assessment</MenuItem>
+        </Menu>
         <Link href="/about">
           <div
-            className={`p-[10px] text-base ${
-              pathname === "/about"
-                ? "text-[#46A7DE] font-bold"
-                : "text-[#C0C7E1]"
-            }`}
+            className={`p-[10px] text-base ${pathname === "/about"
+              ? "text-[#46A7DE] font-bold"
+              : "text-[#C0C7E1]"
+              }`}
           >
             About Us
           </div>

@@ -10,13 +10,21 @@ import React from "react";
 import ButtonNav from "@/assets/Button nav mobile.svg";
 import CloseIcon from "@/assets/close icon.svg";
 import Logo from "@/assets/logo.svg";
+import { Collapse, List, ListItemButton, ListItemText } from "@mui/material";
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 
 function DrawerNav() {
-  const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+
+  const [open, setOpen] = React.useState(false);
+  const [openDropDown, setOpenDropDown] = React.useState(true);
+
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
+  };
+  const handleDropdown = () => {
+    setOpenDropDown(!openDropDown);
   };
 
   return (
@@ -43,33 +51,54 @@ function DrawerNav() {
           <div className="flex flex-col gap-4">
             <Link href="/">
               <div
-                className={`py-[10px] text-base ${
-                  pathname === "/"
-                    ? "text-[#46A7DE] font-bold"
-                    : "text-[#C0C7E1] font-normal"
-                } leading-[140%] tracking-[0.32px]`}
+                className={`py-[10px] text-base ${pathname === "/"
+                  ? "text-[#46A7DE] font-bold"
+                  : "text-[#C0C7E1] font-normal"
+                  } leading-[140%] tracking-[0.32px]`}
               >
                 Home
               </div>
             </Link>
-            <Link href="/services">
-              <div
-                className={`py-[10px] text-base ${
-                  pathname === "/services"
+            <div>
+              <Button onClick={handleDropdown} className="w-full p-0 text-start flex items-center justify-between">
+                <span
+                  className={`text-base ${pathname === "/services"
                     ? "text-[#46A7DE] font-bold"
                     : "text-[#C0C7E1] font-normal"
-                } leading-[140%] tracking-[0.32px]`}
-              >
-                Services
-              </div>
-            </Link>
+                    } leading-[140%] tracking-[0.32px]`}
+                >
+                  Services
+                </span>
+                {openDropDown ? <FaAngleUp color="#C0C7E1" size={16} /> : <FaAngleDown color="#C0C7E1" size={16} />}
+              </Button>
+              <Collapse in={openDropDown} timeout="auto" unmountOnExit className="p-0">
+                <List component="div" disablePadding>
+                  <ListItemButton className="p-0 ps-5">
+                    <ListItemText primary="Penetration Testing"
+                      className={`text-sm
+                      ${pathname === "/"
+                          ? "text-[#46A7DE] font-bold"
+                          : "text-[#C0C7E1] font-normal"
+                        } leading-[140%] tracking-[0.32px]`} />
+                  </ListItemButton>
+                  <ListItemButton className="p-0 ps-5">
+                    <ListItemText
+                      primary="Vulnerability Assessment"
+                      className={`text-sm
+                      ${pathname === "/"
+                          ? "text-[#46A7DE] font-bold"
+                          : "text-[#C0C7E1] font-normal"
+                        } leading-[140%] tracking-[0.32px]`} />
+                  </ListItemButton>
+                </List>
+              </Collapse>
+            </div>
             <Link href="/about">
               <div
-                className={`py-[10px] text-base ${
-                  pathname === "/about"
-                    ? "text-[#46A7DE] font-bold"
-                    : "text-[#C0C7E1] font-normal"
-                } leading-[140%] tracking-[0.32px]`}
+                className={`py-[10px] text-base ${pathname === "/about"
+                  ? "text-[#46A7DE] font-bold"
+                  : "text-[#C0C7E1] font-normal"
+                  } leading-[140%] tracking-[0.32px]`}
               >
                 About Us
               </div>
