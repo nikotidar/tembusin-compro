@@ -3,7 +3,7 @@ import DrawerNav from "@/components/DrawerNav";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import Logo from "@/assets/logo.svg";
 import { Menu, MenuItem } from "@mui/material";
@@ -12,12 +12,14 @@ import { FaAngleDown } from "react-icons/fa";
 
 function Header() {
   const pathname = usePathname();
+  const route = useRouter()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (url: string) => {
+    route.push(url)
     setAnchorEl(null);
   };
 
@@ -44,7 +46,7 @@ function Header() {
           onClick={handleClick}
         >
           <div
-            className={`text-base flex items-center gap-2 ${pathname === "/services"
+            className={`text-base flex items-center gap-2 ${pathname.includes("/services")
               ? "text-[#46A7DE] font-bold"
               : "text-[#C0C7E1]"
               }`}
@@ -62,8 +64,8 @@ function Header() {
             'aria-labelledby': 'basic-button',
           }}
         >
-          <MenuItem onClick={handleClose}>Penetration Testing</MenuItem>
-          <MenuItem onClick={handleClose}>Vulnerability Assessment</MenuItem>
+          <MenuItem onClick={() => handleClose("/services/penetration")}>Penetration Testing</MenuItem>
+          <MenuItem onClick={() => handleClose("/services/vulnerability")}>Vulnerability Assessment</MenuItem>
         </Menu>
         <Link href="/about">
           <div

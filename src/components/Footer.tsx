@@ -19,12 +19,26 @@ function Footer() {
   return (
     <>
       <div className={CONTAINER}>
-        <div className="flex flex-col gap-3 lg:max-w-[198px]">
-          <Link href="/">
-            <Image src={LogoTembusin} alt="logo tembusin" />
-          </Link>
-          <div className={`${LABEL_VALUE} `}>
-            At Tembusin, we ensure cybersecurity through proactive learning, defense, and strategic offense, empowering clients to protect their digital assets in an ever-evolving landscape.
+        <div className="flex flex-col gap-10 lg:max-w-[198px]">
+          <div className="flex flex-col gap-3">
+            <Link href="/">
+              <Image src={LogoTembusin} alt="logo tembusin" />
+            </Link>
+            <div className={`${LABEL_VALUE} `}>
+              At Tembusin, we ensure cybersecurity through proactive learning, defense, and strategic offense, empowering clients to protect their digital assets in an ever-evolving landscape.
+            </div>
+
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <div className={HEADING}>OUR CERTIFICATION</div>
+            <div className="flex flex-nowrap gap-3">
+              <Image width={36} height={36} src={"/assets/ethical.png"} alt="ethical" />
+              <Image width={36} height={36} src={"/assets/cyberwarfare.png"} alt="cyberwarfare" />
+              <Image width={36} height={36} src={"/assets/secops.png"} alt="secops" />
+              <Image width={36} height={36} src={"/assets/ejpt.png"} alt="ejpt" />
+              <Image width={36} height={36} src={"/assets/ewptx.png"} alt="ewptx" />
+            </div>
           </div>
         </div>
 
@@ -67,30 +81,6 @@ function Footer() {
           </Link>
           <Link href="#">
             <div className={LABEL_VALUE}>Vulnerability Assessment</div>
-          </Link>
-        </div>
-
-        <div className="flex flex-col gap-3">
-          <div className={HEADING}>CERTIFICATION</div>
-          <Link href="https://instagram.com/tembusin.id">
-            <div className={`${LABEL_VALUE} flex gap-2 items-center`}>
-              <Image src={InstagramIcon} alt="Instagram icon" />{" "}
-              <span>Instagram</span>
-            </div>
-          </Link>
-
-          <Link href="#">
-            <div className={`${LABEL_VALUE} flex gap-2 items-center`}>
-              <Image src={TwitterIcon} alt="Twitter icon" />{" "}
-              <span>Twitter</span>
-            </div>
-          </Link>
-
-          <Link href="#">
-            <div className={`${LABEL_VALUE} flex gap-2 items-center`}>
-              <Image src={FacebookIcon} alt="Facebook icon" />{" "}
-              <span>Facebook</span>
-            </div>
           </Link>
         </div>
       </div>
