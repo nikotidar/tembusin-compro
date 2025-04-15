@@ -3,7 +3,7 @@ import React from 'react'
 function Features() {
     const before = "before:absolute before:-bottom-6 before:-right-11 before:w-20 before:h-28 before:bg-none before:rounded-bl-[2rem] before:shadow-[inset_36px_-30px_0_white]"
     return (
-        <div className='select-none bg-[#C0C7E1] flex flex-col gap-40'>
+        <div className='select-none bg-[#C0C7E1] flex flex-col gap-32'>
             <div className='
             relative
             mx-auto bg-white max-w-7xl rounded-b-[2.5rem] rounded-tr-none pb-14 

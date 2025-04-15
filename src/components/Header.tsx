@@ -18,9 +18,13 @@ function Header() {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = (url: string) => {
-    route.push(url)
+  const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleCloseAndRoute = (path: string) => {
+    handleClose();
+    route.push(path);
   };
 
   return (
@@ -44,6 +48,7 @@ function Header() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
+          onMouseEnter={handleClick}
         >
           <div
             className={`text-base flex items-center gap-2 ${pathname.includes("/services")
@@ -64,8 +69,18 @@ function Header() {
             'aria-labelledby': 'basic-button',
           }}
         >
-          <MenuItem onClick={() => handleClose("/services/penetration")}>Penetration Testing</MenuItem>
-          <MenuItem onClick={() => handleClose("/services/vulnerability")}>Vulnerability Assessment</MenuItem>
+          <MenuItem
+            onClick={() => handleCloseAndRoute("/services/penetration")}
+            className={`${pathname.includes("/penetration")
+              ? "text-[#46A7DE]"
+              : ""
+              }`}>Penetration Testing</MenuItem>
+          <MenuItem
+            onClick={() => handleCloseAndRoute("/services/vulnerability")}
+            className={`${pathname.includes("/vulnerability")
+              ? "text-[#46A7DE]"
+              : ""
+              }`}>Vulnerability Assessment</MenuItem>
         </Menu>
         <Link href="/about">
           <div
