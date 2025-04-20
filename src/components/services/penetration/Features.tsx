@@ -45,7 +45,7 @@ function Features() {
                             We combine expert knowledge, advanced tools, and a personalized approach to ensure your systems are protected from potential threats.
                         </div>
                     </div>
-                    <div className='max-sm:px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-[#121926]'>
+                    <div className='max-sm:px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 gap-x-0 text-[#121926]'>
                         <div className='border-t-4 p-8 flex flex-col gap-4 border-[#0047FF]'>
                             <h1 className="text-[20px] font-bold leading-[140%] tracking-[0.4px]">
                                 Comprehensive Assessments
