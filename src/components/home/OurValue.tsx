@@ -24,7 +24,7 @@ function OurValue() {
       <div
         className="lg:hidden flex flex-col bg-[#2E449C] pt-10 pb-20 px-4 mb-10 bg-no-repeat bg-contain relative"
         style={{
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 90%);",
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 90%)",
         }}
       >
         <div className="px-1 py-3 mb-4 uppercase text-base text-[#46A7DE] font-bold leading-[130%] tracking-[0.56px] md:tracking-[0.64px]">
