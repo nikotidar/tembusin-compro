@@ -15,7 +15,7 @@ function OurValue() {
         <div className="mb-5 md:mb-10 text-white md:text-[50px] text-[24px] font-bold leading-[140%] tracking-[0.48px] md:tracking[1px] md:max-w-[440px]">
           Cybersecurity is our specialty
         </div>
-        <div className="text-white font-normal text-lg md:text-[22px] leading-[140%] tracking-[0.36px] md:tracking-[0.44px] ">
+        <div className="text-white max-w-sm font-normal text-lg md:text-[22px] leading-[140%] tracking-[0.36px] md:tracking-[0.44px] ">
           We bridge expertise, reliability, and comprehensive solutions for your
           cybersecurity needs.
         </div>
