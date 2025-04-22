@@ -20,8 +20,7 @@ function ContactForm() {
               Address
             </div>
             <div className="text-white text-[22px] font-normal leading-[140%] tracking-[0.48px]">
-              Jl. Outer Ring Road Rukan Sedayu Square Blok G No. 8 Cengkareng
-              Barat, Jakarta Barat 11730
+              Ruko Green Lake Blok TBE Unit L&M Sunter Agung, Penjaringan, Kec. Penjaringan, Jakarta Utara, DKI Jakarta
             </div>
           </div>
 
