@@ -1,7 +1,8 @@
-import BannerBottom from "@/components/BannerBottom";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import OurValue from "@/components/home/OurValue";
 import Banner from "@/components/services/Banner";
+import BannerBottom from "@/components/services/BannerBottom";
 import OurServices from "@/components/services/OurServices";
 import Overview from "@/components/services/Overview";
 import type { Metadata } from "next";
@@ -32,6 +33,7 @@ export default function Services() {
       <Header />
       <Banner />
       <Overview />
+      <OurValue />
       <OurServices />
       <BannerBottom />
       <Footer />

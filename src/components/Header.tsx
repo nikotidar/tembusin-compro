@@ -3,12 +3,29 @@ import DrawerNav from "@/components/DrawerNav";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import Logo from "@/assets/logo.svg";
+import { Menu, MenuItem } from "@mui/material";
+import { useState } from "react";
+import { FaAngleDown } from "react-icons/fa";
 
 function Header() {
   const pathname = usePathname();
+  const route = useRouter()
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleCloseAndRoute = (path: string) => {
+    handleClose();
+    route.push(path);
+  };
 
   return (
     <div className="lg:px-[164px] lg:py-6 px-4 py-3 bg-banner-header flex justify-between items-center">
@@ -17,34 +34,60 @@ function Header() {
       </Link>
       <DrawerNav />
 
-      <div className="md:flex hidden gap-2">
+      <div className="md:flex items-center hidden gap-2">
         <Link href="/">
           <div
-            className={`p-[10px] text-base ${
-              pathname === "/" ? "text-[#46A7DE] font-bold" : "text-[#C0C7E1]"
-            }`}
+            className={`p-[10px] text-base ${pathname === "/" ? "text-[#46A7DE] font-bold" : "text-[#C0C7E1]"
+              }`}
           >
             Home
           </div>
         </Link>
-        <Link href="/services">
+        <Button
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+          onMouseEnter={handleClick}
+        >
           <div
-            className={`p-[10px] text-base ${
-              pathname === "/services"
-                ? "text-[#46A7DE] font-bold"
-                : "text-[#C0C7E1]"
-            }`}
+            className={`text-base flex items-center gap-2 ${pathname.includes("/services")
+              ? "text-[#46A7DE] font-bold"
+              : "text-[#C0C7E1]"
+              }`}
           >
             Services
+            <FaAngleDown />
           </div>
-        </Link>
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem
+            onClick={() => handleCloseAndRoute("/services/penetration")}
+            className={`${pathname.includes("/penetration")
+              ? "text-[#46A7DE]"
+              : ""
+              }`}>Penetration Testing</MenuItem>
+          <MenuItem
+            onClick={() => handleCloseAndRoute("/services/vulnerability")}
+            className={`${pathname.includes("/vulnerability")
+              ? "text-[#46A7DE]"
+              : ""
+              }`}>Vulnerability Assessment</MenuItem>
+        </Menu>
         <Link href="/about">
           <div
-            className={`p-[10px] text-base ${
-              pathname === "/about"
-                ? "text-[#46A7DE] font-bold"
-                : "text-[#C0C7E1]"
-            }`}
+            className={`p-[10px] text-base ${pathname === "/about"
+              ? "text-[#46A7DE] font-bold"
+              : "text-[#C0C7E1]"
+              }`}
           >
             About Us
           </div>
