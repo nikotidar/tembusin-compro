@@ -93,7 +93,7 @@ function Footer() {
             </div>
             Instagram
           </Link>
-          <Link href="#" className={`${LABEL_VALUE} flex gap-2 items-center`}>
+          <Link href="https://www.linkedin.com/company/tembusin-id/" className={`${LABEL_VALUE} flex gap-2 items-center`}>
             <div className=" bg-[#0077B5] text-white rounded-full p-1 text-sm">
               <FaLinkedinIn />
             </div>
