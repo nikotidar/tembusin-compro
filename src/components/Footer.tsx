@@ -73,13 +73,13 @@ function Footer() {
 
         <div className="flex flex-col gap-3">
           <div className={HEADING}>Services</div>
-          <Link href="#">
+          <Link href="/services/penetration/">
             <div className={LABEL_VALUE}>Penetration Testing</div>
           </Link>
-          <Link href="#">
+          {/* <Link href="#">
             <div className={LABEL_VALUE}>Security Solution Integration</div>
-          </Link>
-          <Link href="#">
+          </Link> */}
+          <Link href="/services/vulnerability/">
             <div className={LABEL_VALUE}>Vulnerability Assessment</div>
           </Link>
         </div>
