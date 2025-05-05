@@ -101,7 +101,7 @@ function DrawerNav() {
             </div>
             <Link href="/about">
               <div
-                className={`py-[10px] text-base ${pathname === "/about"
+                className={`py-[10px] text-base ${pathname === "/about/"
                   ? "text-[#46A7DE] font-bold"
                   : "text-[#C0C7E1] font-normal"
                   } leading-[140%] tracking-[0.32px]`}
