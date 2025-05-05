@@ -58,7 +58,7 @@ function Header() {
 
         <Link href="/about">
           <div
-            className={`p-[10px] text-base ${pathname === "/about" ? "text-[#46A7DE] font-bold" : "text-[#C0C7E1]"}`}
+            className={`p-[10px] text-base ${pathname === "/about/" ? "text-[#46A7DE] font-bold" : "text-[#C0C7E1]"}`}
           >
             About Us
           </div>

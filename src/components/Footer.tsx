@@ -85,7 +85,7 @@ function Footer() {
         </div>
       </div>
       <div className={COPYRIGHT}>
-        <div>Copyright©tembusin.id</div>
+        <div>Tembusin © 2025 | All rights reserved.</div>
         <div className="flex gap-3 items-center">
           <Link href="https://instagram.com/tembusin.id" className={`${LABEL_VALUE} flex gap-2 items-center`}>
             <div className=" bg-[#C13584] text-white rounded-full p-1 text-sm">

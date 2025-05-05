@@ -37,12 +37,21 @@ function Features() {
             '>
                 <div id='shape' className={` ${before} select-none absolute w-9/12 h-14 md:h-32 z-0 bg-white -top-[55px] md:-top-[122px] rounded-t-[1rem] md:rounded-t-[2.5rem]`} />
                 <div id='content' className=' md:px-24 flex flex-col gap-8 md:gap-16'>
-                    <div className=' flex max-sm:flex-col justify-start md:justify-end gap-6 md:gap-20 text-black px-4 md:px-10'>
-                        <div className='z-50 text-4xl md:text-[64px] mt-2 md:-mt-14 font-extrabold text-[#2E449C] leading-[130%] md:tracking-[1px] tracking-[1.28px]'>
+                    <div className=' flex max-sm:flex-col justify-stretch gap-6 md:gap-20 text-black'>
+                        <div className='z-50 text-4xl w-full md:max-w-xl md:text-[64px] mt-2 md:-mt-10 px-4 font-extrabold text-[#2E449C] leading-[130%] md:tracking-[1px] tracking-[1.28px]'>
                             Why You’ll Love Our Penetration Testing Services
                         </div>
-                        <div className='z-10 md:pt-16 max-w-sm font-bold text-2xl leading-normal text-[#364152]'>
+                        <div className='sm:hidden z-10 md:pt-10 w-full px-4 lg:max-w-sm font-bold text-2xl leading-[140%] tracking-[0.48px] text-[#364152]'>
                             We combine expert knowledge, advanced tools, and a personalized approach to ensure your systems are protected from potential threats.
+                        </div>
+                        <div className='max-sm:hidden flex flex-wrap z-10 md:pt-10 w-full px-4 lg:max-w-sm font-bold text-2xl leading-[140%] tracking-[0.48px] text-[#364152]'>
+                            <div>We combine expert</div>
+                            <div>knowledge, advanced </div>
+                            <div>tools, and a </div>
+                            <div>personalized approach </div>
+                            <div>to ensure your systems </div>
+                            <div>are protected from </div>
+                            <div>potential threats.</div>
                         </div>
                     </div>
                     <div className='max-sm:px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 gap-x-0 text-[#121926]'>
@@ -84,14 +93,14 @@ function Features() {
                     </div>
                 </div>
             </div>
-            <div className='relative w-full md:min-h-40 md:px-[164px] h-[1200px] md:h-[550px]'>
-                <div className='w-full flex max-sm:flex-col md:items-end gap-10'>
+            <div className='relative w-full md:min-h-40 h-[1200px] md:h-[550px]'>
+                <div className='w-full flex max-sm:flex-col md:items-end gap-10 md:px-[164px]'>
                     <div className='text-[#2E449C] text-[50px] font-bold leading-[130%] md:tracking-[1px] tracking-[1px] max-w-md'>Our Penetration Testing Process</div>
                     <svg className="w-auto h-[2px] bg-[#46A7DE] mb-5" viewBox="0 0 600 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 1H600" stroke="#C0C7E0" stroke-width="4" stroke-dasharray="12 12" />
                     </svg>
                 </div>
-                <div className='absolute mx-auto max-w-7xl mt-10 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[29px] gap-x-10'>
+                <div className='absolute mx-auto max-w-full md:px-[164px] mt-10 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[29px] gap-x-10'>
                     {data.map((item, i) => (
                         <div
                             key={i}
